@@ -11,6 +11,4 @@ rootElement.render(
   </>
 );
 
-{
-  /*encapsulando meus render com <> que é um atalho pra div*/
-}
+

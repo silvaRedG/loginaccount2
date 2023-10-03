@@ -1,4 +1,7 @@
 import React from "react";
+import People from "./assets/people.svg";
+import Arrow from "./assets/arrow.svg"
+
 import {
   Container,
   Image,
@@ -10,32 +13,29 @@ import {
 } from "./styles";
 
 function App() {
-  
-
-
   return (
     <Container>
-     <Image/>
+
+      <Image alt="logo-imagem" src={People} />
+
       {/* Criando os itens do forms da applicação*/}
       <ContainerItens>
-
         <H1>Olá!!!</H1>
 
         <InputLabel>Name</InputLabel>
-        <Input placeholder="Name"/>
+        <Input placeholder="Name" autoFocus />
 
         <InputLabel>Age</InputLabel>
-        <Input placeholder="Age"/>
+        <Input placeholder="Age" />
 
         <InputLabel>Email</InputLabel>
-        <Input placeholder="Email"/>
+        <Input placeholder="Email" />
 
-        <Button>Register</Button>
-
+        <Button>Register <img alt="arrow" src={Arrow}/></Button>
       </ContainerItens>
       {/* Fim dos Itens */}
     </Container>
-  )
+  );
 }
 
-export default App
+export default App;
