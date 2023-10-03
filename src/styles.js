@@ -2,12 +2,6 @@ import styled from "styled-components";
 import Background from "./assets/background1.svg";
 
 export const Container = styled.div`
-   {
-    /*para inserir a imagem devo declarar o import primeiro
-  em seguida atribuir a imagem dentro de uma url
-  no formato parecido com template string*/
-  }
-
   background: url("${Background}");
   background-size: cover;
 
@@ -15,7 +9,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  min-height:100vh;
+  min-height: 100vh;
 
   gap: 40px;
 `;
@@ -33,14 +27,12 @@ export const ContainerItens = styled.div`
     rgba(255, 255, 255, 0.15) 100%
   );
 
-  min-height:100vh;
+  min-height: 100vh;
 
   padding: 50px 36px;
 
   display: flex;
   flex-direction: column;
-
-  
 `;
 
 export const H1 = styled.h1`
@@ -88,7 +80,7 @@ export const Button = styled.button`
 
   width: 342px;
   height: 74px;
-  color: #eee;
+  color: #eeeeee;
 
   font-style: normal;
   font-weight: bold;
@@ -96,7 +88,7 @@ export const Button = styled.button`
   line-height: 28px;
 
   border: none;
-  background: rgba(0,0,0,0.8)
+  background: rgba(0,0,0,0.8);
   border-radius: 14px;
   outline: none;
   cursor: pointer;
@@ -105,8 +97,10 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  
 
   &:hover{
     opacity: 0.8;
   }
-`;
+`
+;

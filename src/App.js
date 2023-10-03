@@ -13,6 +13,16 @@ import {
 } from "./styles";
 
 function App() {
+
+const user = [
+  {id: Math.random, name:"Matheus", age:28},
+  {id: Math.random, name:"Matheus", age:28},
+]
+
+
+
+
+
   return (
     <Container>
 
@@ -32,6 +42,13 @@ function App() {
         <Input placeholder="Email" />
 
         <Button>Register <img alt="arrow" src={Arrow}/></Button>
+
+    <ul>
+      <li>
+        {user[0].name} - {user[0].age}
+      </li>
+    </ul>
+
       </ContainerItens>
       {/* Fim dos Itens */}
     </Container>
