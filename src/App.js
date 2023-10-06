@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import People from "./assets/america-1861417.svg";
 import Arrow from "./assets/arrow.svg";
 import Trash from "./assets/trash.svg";
@@ -27,9 +27,9 @@ evento onchange dos inputs pra cada campo
   */
 
   const [users, setUsers] = useState([]);
-  const [name, setName] = useState();
-  const [age, setAge] = useState();
-  const [email, setEmail] = useState();
+  const inputName = useRef();
+  const inputAge = useRef();
+  const inputEmail = useRef();
 
   /*função onde clico no botão ele criar usuario e joga
   usuarios criado pra dentro do array
@@ -47,37 +47,42 @@ evento onchange dos inputs pra cada campo
   /* no js não preciso repetir os valores
 propriedades mesmo nome da variavel se coloca uma vez só */
 
-/*speed operator
+  /*speed operator
 
- 
+ // useRef = só pega informação quando clico no botão
+// permite fazer referencia no input 
+//
+
 
 
 */
 
   function addUser() {
-    setUsers([...users,{ id: Math.random(), name, age, email }]);
+    setUsers([
+      ...users,
+      {
+        id: Math.random(),
+        name: inputName.current.value,
+        age: inputAge.current.value,
+        email: inputEmail.current.value,
+      },
+    ]);
   }
 
   /*
      Funções OnChange para alterar campos na aplicação
 */
-  function nameInput(event) {
-    setName(event.target.value);
-  }
-
-  function ageInput(event) {
-    setAge(event.target.value);
-  }
-
-  function emailInput(event) {
-    setEmail(event.target.value);
-  }
 
   /*
      Fim
 */
 
   // Estado => Variável
+
+  function deleteUser(usersID) {
+    const newUsers = users.filter((users) => users.id !== usersID);
+    setUsers(newUsers);
+  }
 
   return (
     <Container>
@@ -87,13 +92,13 @@ propriedades mesmo nome da variavel se coloca uma vez só */
         <H1>Welcome - React Forms</H1>
 
         <InputLabel>Name</InputLabel>
-        <Input onChange={nameInput} placeholder="Name" autoFocus />
+        <Input ref={inputName} placeholder="Name" autoFocus />
 
         <InputLabel>Age</InputLabel>
-        <Input onChange={ageInput} placeholder="Age" />
+        <Input ref={inputAge} placeholder="Age" />
 
         <InputLabel>Email</InputLabel>
-        <Input onChange={emailInput} placeholder="Email" />
+        <Input ref={inputEmail} placeholder="Email" />
 
         <Button onClick={addUser} type="submit">
           Register <img alt="seta" src={Arrow} />
@@ -116,7 +121,7 @@ dentro dela utilizamos o metodo map para mapear o array e da função id*/}
               <p>{users.name}</p>
               <p>{users.age}</p>
               <p>{users.email}</p>
-              <button>
+              <button onClick={() => deleteUser(users.id)}>
                 <img alt="trash" src={Trash} />
               </button>
             </Users>
