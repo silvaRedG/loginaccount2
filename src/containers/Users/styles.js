@@ -9,7 +9,7 @@ import styled from "styled-components";
 export const Container = styled.div`
 
   
-background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+background-image: linear-gradient(to top, #30c3d0 0%, #330867 100%);
 
 
 display: flex;
@@ -38,6 +38,8 @@ background: linear-gradient(157deg,
     rgba(255, 255, 255, 0.15) 100%);
 
 
+    backdrop-filter: blur(45px);
+
     padding: 50px 36px;
 
     display: flex;
@@ -61,50 +63,11 @@ margin-bottom: 80px;
 
 `;
 
-export const InputLabel = styled.p`
-  
-color: #eeeeee;
-font-size: 18px;
-font-style: normal;
-font-weight: bold;
-line-height: 27px; /* 122.222% */
-letter-spacing: -0.408px;
-margin-left: 25px;
-
-
-  
-`;
-
-export const Input = styled.input`
-
-border-radius: 14px;
-background: rgba(255, 255, 255, 0.25);
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-width: 342px;
-height: 58px;
-
-border: none;
-outline: none;
-
-padding-left: 25px; /* letra dentro do input recuar */ 
-
-color: #1C1C1C;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 28px;
-
-
-margin-bottom: 35px;
-
-
-`
 
 export const Button = styled.button`
 
 border-radius: 14px;
-background: var(--templates-5-color-1, rgba(0, 0, 0, 0.80));
+background: transparent;
 
 width: 342px;
 height: 74px;
@@ -118,13 +81,16 @@ font-size: 17px;
 font-weight: 700;
 line-height: 28px; /* 164.706% */
 
-border: none;
+border: 1px solid #FFF;
 
 /* Aplicando display flex pra ajustar o button e img dentro dele */
 display: flex;
 justify-content: center;
 align-items: center;
 gap:20px;
+
+margin-top: 120px;
+
 
 
 /* Aplicando efeito hover dentro do react, sempre utilizar o "&"*/
@@ -135,6 +101,11 @@ gap:20px;
 
 &:active{
   opacity: 0.9;
+}
+
+
+img{
+  transform: rotateY(180deg);
 }
 
 `
@@ -169,7 +140,6 @@ button{
   border: none;
   cursor: pointer;
 }
-
 
 
 `
